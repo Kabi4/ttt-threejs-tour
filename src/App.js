@@ -121,10 +121,6 @@ function App({ ...props }) {
       encId: id,
     };
     let apiCall = getTourDetails360;
-
-    payload = {
-      tourId: id,
-    }
     apiCall(payload).then(async (res) => {
       const data = res.data && res.data.data ? res.data.data : null;
       if (data) {
@@ -240,6 +236,8 @@ function App({ ...props }) {
       }
     }
   };
+
+  console.log(tourConfig);
 
   //conver array into obj
   const convertArrayToObject = (array, key) => {

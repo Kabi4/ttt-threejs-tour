@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^13.5.0",
     "antd": "^4.20.1",
     "axios": "^0.27.2",
+    "env-cmd": "^10.1.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-router": "^6.3.0",
@@ -19,8 +20,12 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "env-cmd -f ./src/environments/.env react-scripts --max_old_space_size=4096 start",
+    "build": "env-cmd -f ./src/environments/.env react-scripts --max_old_space_size=4096 build",
+    "build:dev": "env-cmd -f ./src/environments/.env.dev react-scripts build",
+    "build:stage": "env-cmd -f ./src/environments/.env.stage react-scripts build",
+    "build:prod": "env-cmd -f ./src/environments/.env.prod react-scripts build",
+    "build:test": "env-cmd -f ./src/environments/.env.test react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
