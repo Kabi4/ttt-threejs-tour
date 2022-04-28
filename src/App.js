@@ -1,10 +1,11 @@
 import * as THREE from "three";
-import React, { Suspense, useEffect, useState, useParams } from "react";
+import React, { Suspense, useEffect, useState, } from "react";
 import { Canvas, useLoader } from "@react-three/fiber";
 import { Html, Preload, OrbitControls } from "@react-three/drei";
 import { Popconfirm } from "antd";
 import "antd/dist/antd.css";
 import { getGCSSignedURL, getTourDetails360 } from "./services/ApiService";
+import { useParams } from "react-router";
 
 const store = [
   {
